@@ -1,0 +1,12 @@
+from flask import Flask,jsonify
+
+
+app = Flask(__name__)
+@app.route('/api/data', methods=["Get"])
+def get_data():
+  Dataset = {"City": ["NewYork","NewYork","Los Angels", "Los Angels"],
+       "Gender":["Male","Female","Male","Female"],
+       "Population":[410000,540000,670000,980000]}
+  return jsonify(Dataset)
+if __name__ == "__main__":
+  app.run(debug=True)
